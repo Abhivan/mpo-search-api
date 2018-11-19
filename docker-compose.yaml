@@ -24,7 +24,7 @@ services:
     command: bash -c "logstash -f /tmp/logstash.conf"
     volumes:
       - ./logstash.conf:/tmp/logstash.conf
-      - /home/ftpusers/ampowerMPO/ampowerMPO:/tmp
+      - /home/ftpusers/ampowerMPO/ampowerMPO:/tmp/data
     depends_on: ['elasticsearch']
 
 #  kibana:

@@ -6,17 +6,17 @@ services:
     restart: 'on-failure'
     ports:
       - '8080:8080'
-    depends_on: ['elasticsearch']
+#    depends_on: ['elasticsearch']
 
-  elasticsearch:
-    container_name: 'elasticsearch'
-    image: elasticsearch:6.5.0
-    command: elasticsearch -E network.host=0.0.0.0 -E discovery.zen.minimum_master_nodes=1
-    ports:
-      - '9200:9200'
-      - '9300:9300'
-    volumes:
-      - es_data:/usr/share/elasticsearch/data
+#  elasticsearch:
+#    container_name: 'elasticsearch'
+#    image: elasticsearch:6.5.0
+#    command: elasticsearch -E network.host=0.0.0.0 -E discovery.zen.minimum_master_nodes=1
+#    ports:
+#      - '9200:9200'
+#      - '9300:9300'
+#    volumes:
+#      - es_data:/usr/share/elasticsearch/data
 
   logstash:
     container_name: 'logstash'
@@ -25,7 +25,7 @@ services:
     volumes:
       - ./logstash.conf:/tmp/logstash.conf
       - /home/ftpusers/ampowerMPO/ampowerMPO:/tmp/data
-    depends_on: ['elasticsearch']
+#    depends_on: ['elasticsearch']
 
 #  kibana:
 #    container_name: 'kibana'
@@ -34,5 +34,5 @@ services:
 #      - '5601:5601'
 #    depends_on: ['elasticsearch']
 
-volumes:
-  es_data:
+#volumes:
+#  es_data:

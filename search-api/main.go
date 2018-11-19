@@ -55,7 +55,7 @@ func main() {
 	// Create Elastic client and wait for Elasticsearch to be ready
 	for {
 		elasticClient, err = elastic.NewClient(
-			elastic.SetURL("http://elasticsearch:9200"),
+			elastic.SetURL("https://search-ampoweruk-search-ndtvt3itb3fqy7ais3vu4v53me.eu-west-1.es.amazonaws.com"),
 			elastic.SetSniff(false),
 		)
 		if err != nil {
